@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 将namespace的值设置为DAO类对应的路径 -->
+<mapper namespace="org.starrier.ishare.dao.ArticleDao">
+    <!-- 目的：为DAO接口方法提供sql语句配置 -->
+    <resultMap id="MyResultMap" type="org.starrier.ishare.model.entity.Comment">
+        <result column="id" property="id"></result>
+        <result column="article_id" property="articleId"></result>
+        <result column="comment" property="comment"></result>
+        <result column="date" property="date"></result>
+    </resultMap>
+    <sql id="MyResultColumns">
+        id,article_id,comment,date
+    </sql>
+    <select id="showArticle" resultType="Article">
+        select a.*,c.name as category from article a,category c WHERE a.categoryId=c.id ORDER BY date DESC limit 10
+    </select>
+
+    <insert id="writeBlog" parameterType="Article">
+        INSERT INTO article (title,content,date,categoryId,summary,author) VALUES
+        (#{title},#{content},#{date},#{categoryId},#{summary},#{author})
+    </insert>
+
+    <select resultType="Article" id="getArticlesByCategoryId" parameterType="int">
+        SELECT a.*,c.name as category FROM article a,category c WHERE a.categoryId=c.id AND categoryId=#{categoryId}
+        ORDER BY date DESC
+    </select>
+
+    <select id="getArticlesByDate" parameterType="String" resultType="Article">
+        SELECT a.*,c.name as category FROM article a,category c WHERE a.categoryId=c.id AND a.date like "%"#{date}"%"
+        ORDER BY date DESC
+    </select>
+
+    <select id="getArticlesByKeyword" parameterType="String" resultType="Article">
+        select a.*,c.name as category from article a ,category c WHERE a.categoryId=c.id AND a.title LIKE
+        "%"#{keyword}"%" ORDER BY date DESC
+    </select>
+
+    <select id="getArticleById" parameterType="int" resultType="Article">
+        select * from article where id = #{id}
+    </select>
+
+    <insert id="addComment" parameterType="Comment">
+        INSERT INTO comment (article_id,comment,date) VALUES (#{articleId},#{comment},#{date})
+    </insert>
+
+    <select id="showComment" resultMap="MyResultMap" parameterType="int">
+        SELECT
+        <include refid="MyResultColumns"></include>
+        FROM comment WHERE article_id=#{articleId} ORDER BY date DESC
+    </select>
+
+    <select id="getUserArticle" resultType="Article" parameterType="String">
+        select * FROM article WHERE author = #{value}
+    </select>
+
+    <select id="getArticlesByAuthor" resultType="Article" parameterType="String">
+        select a.*,c.name as category from article a ,category c WHERE a.categoryId=c.id AND a.author=#{author}
+    </select>
+
+    <select id="findAllArticle" resultType="article">
+        SELECT * FROM article
+    </select>
+
+    <update id="update" parameterType="Article">
+        update article set content = #{content}, date = #{date} ,summary = #{summary} where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM article WHERE id=#{id}
+    </delete>
+</mapper>
