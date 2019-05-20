@@ -1,20 +1,24 @@
 # iShare
 [![Build Status](https://travis-ci.org/Starrier/iShare.svg?branch=master)](https://travis-ci.org/Starrier/iShare)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)](https://github.com/Starrier/iShare.git)
+[![Coverage Status](https://coveralls.io/repos/github/Starrier/iShare/badge.svg?branch=master)](https://coveralls.io/github/Starrier/iShare?branch=master)
 
 **Blog written with feeling and life**
 
-**Note:_This project is my 2019 graduation design, not for any business or reference, in addition to contributing to the project, if any other use, please contact me_.**
+**Note:**
+
+> The repository is mainly built by the iShare team. We built the initial version, and you can still see the original version in Branch legacy.
 
 #### Members
 
-  [Starriers](https://github.com/Starriers)<br/>
+In the following members, we created the original iShare. Although we did not develop perfectly at first, we made a lot of efforts for it, so I would like to thank them for everything they have done for it. Now, version 1.0.0 has been released, but you can still look at our hard-working code on branch A
+
+   - [Starriers](https://github.com/Starriers)<br/>
   
-  [wangdongmei](https://github.com/GitHuB-wangdongmei)<br/>
+   - [wangdongmei](https://github.com/GitHuB-wangdongmei)<br/>
   
-  [EVandAK](https://github.com/EVandAK)<br/>
+   - [EVandAK](https://github.com/EVandAK)<br/>
   
-  [Sunday](https://github.com/YrhSun)<br/>
+   - [Sunday](https://github.com/YrhSun)<br/>
 
 ## Start
 
