@@ -30,7 +30,7 @@ branches:
     - master
 
 notifications:
-  webhooks:https://oapi.dingtalk.com/robot/send?access_token=3ee396e877598f75bfebedec9f226f9f286037437443ac0c429b2aaa6df0d10a
+  https://oapi.dingtalk.com/robot/send?access_token=c865c310bba5aa73da4a19ed7ceb760670e95163686479de11d75aad827f0b15
 
 env:
   global:
