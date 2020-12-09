@@ -27,8 +27,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     /**
-     *
-     * @param toEmail   收件人的邮箱地址
+     * @param toEmail 收件人的邮箱地址
      */
     @Override
     public void sendHaveRestMessage(String toEmail) {
@@ -41,7 +40,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public void sendHealthMessage(String toEmail ) {
+    public void sendHealthMessage(String toEmail) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(FROM);
         message.setTo(toEmail);
@@ -51,7 +50,7 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public void sendSickMessage(String toEmail ) {
+    public void sendSickMessage(String toEmail) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(FROM);
         message.setTo(toEmail);

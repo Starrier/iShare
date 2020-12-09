@@ -1,7 +1,5 @@
 package org.starrier.ishare.constant;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public class EmailConstant {
 
     public static final Integer TEN = 10;
@@ -16,7 +14,7 @@ public class EmailConstant {
 
     public static final String HEALTH = "身体健康";
 
-    public static final String HEALTH_CONTENT= "近期身体相对健康，但是仍然需要注意休息";
+    public static final String HEALTH_CONTENT = "近期身体相对健康，但是仍然需要注意休息";
 
     public static final String SICK = "身体较差";
 

@@ -1,6 +1,10 @@
 package org.starrier.ishare.util;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 敏感词处理工具 - DFA算法实现
@@ -298,5 +302,6 @@ public class SensitiveWordUtil {
         String filterStr2 = SensitiveWordUtil.replaceSensitiveWord(string, "[*敏感词*]");
         System.out.println(filterStr2);
         filterStr2 = SensitiveWordUtil.replaceSensitiveWord(string, "[*敏感词*]", SensitiveWordUtil.MinMatchTYpe);
-        System.out.println(filterStr2);}
+        System.out.println(filterStr2);
+    }
 }

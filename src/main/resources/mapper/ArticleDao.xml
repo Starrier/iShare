@@ -6,10 +6,10 @@
 <mapper namespace="org.starrier.ishare.dao.ArticleDao">
     <!-- 目的：为DAO接口方法提供sql语句配置 -->
     <resultMap id="MyResultMap" type="org.starrier.ishare.model.entity.Comment">
-        <result column="id" property="id"></result>
-        <result column="article_id" property="articleId"></result>
-        <result column="comment" property="comment"></result>
-        <result column="date" property="date"></result>
+        <result column="id" property="id"/>
+        <result column="article_id" property="articleId"/>
+        <result column="comment" property="comment"/>
+        <result column="date" property="date"/>
     </resultMap>
     <sql id="MyResultColumns">
         id,article_id,comment,date
