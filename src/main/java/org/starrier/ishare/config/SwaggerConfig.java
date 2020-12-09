@@ -13,8 +13,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Author Starrier
- * @Time 2018/5/23.
+ * @author Starrier
+ * @date 2018/5/23.
  */
 @WebAppConfiguration
 @EnableSwagger2

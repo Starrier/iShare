@@ -1,6 +1,5 @@
 package org.starrier.ishare.service.impl;
 
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -41,7 +39,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     private final EmailService emailService;
 
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_FORMAT);
+    private final SimpleDateFormat simpleDateFormat = new SimpleDateFormat(DATE_FORMAT);
 
     public ArticleServiceImpl(ArticleDao articleDao, EmailService emailService) {
         this.articleDao = articleDao;
@@ -70,7 +68,7 @@ public class ArticleServiceImpl implements ArticleService {
         //初始化敏感词库
         SensitiveWordUtil.init(sensitiveWordSet);
         Set<String> set = SensitiveWordUtil.getSensitiveWord(article.getContent());
-        if (set.size()<TEN) {
+        if (set.size() < TEN) {
             emailService.sendHealthMessage(author);
         } else if ((set.size() > TEN) && (set.size() < TWENTY)) {
             emailService.sendHaveRestMessage(author);
@@ -78,6 +76,7 @@ public class ArticleServiceImpl implements ArticleService {
             emailService.sendSickMessage(author);
         }
     }
+
     @Override
     public List<Article> findAllArticle() {
         return articleDao.findAllArticle();

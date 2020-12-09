@@ -2,11 +2,13 @@ package org.starrier.ishare.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.Accessors;
+
+import javax.persistence.Table;
 
 /**
  * @author Starrier
@@ -14,8 +16,8 @@ import lombok.experimental.Accessors;
  */
 @Getter
 @Setter
-@Accessors(fluent = true)
 @Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comment {

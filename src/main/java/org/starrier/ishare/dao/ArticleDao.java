@@ -106,6 +106,7 @@ public interface ArticleDao {
 
     /**
      * Find All Articles
+     *
      * @return List of {@link Article}
      */
     List<Article> findAllArticle();

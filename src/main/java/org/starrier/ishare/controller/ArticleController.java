@@ -15,7 +15,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import static org.starrier.ishare.util.Constant.*;
+import static org.starrier.ishare.util.Constant.ARTICLE;
+import static org.starrier.ishare.util.Constant.ARTICLES;
+import static org.starrier.ishare.util.Constant.ARTICLE_ID;
+import static org.starrier.ishare.util.Constant.COMMENTS;
+import static org.starrier.ishare.util.Constant.DATE_FORMAT;
+import static org.starrier.ishare.util.Constant.ID;
+import static org.starrier.ishare.util.Constant.KEYWORD;
+import static org.starrier.ishare.util.Constant.VALUE;
 
 /**
  * @author Starrier

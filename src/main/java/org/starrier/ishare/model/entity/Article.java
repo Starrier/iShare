@@ -18,6 +18,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Article {
+
     private int id;
     private String title;
     private String content;
