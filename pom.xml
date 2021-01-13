@@ -361,7 +361,7 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-            <plugin>
+           <!-- <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
                 <version>2.2.1</version>
@@ -374,12 +374,12 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <dateFormat>yyyyMMdd-HHmmss</dateFormat><!--  human-readable part of the version number -->
+                    <dateFormat>yyyyMMdd-HHmmss</dateFormat>&lt;!&ndash;  human-readable part of the version number &ndash;&gt;
                     <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
                     <generateGitPropertiesFile>false
-                    </generateGitPropertiesFile><!-- somehow necessary. otherwise the variables are not available in the pom -->
+                    </generateGitPropertiesFile>&lt;!&ndash; somehow necessary. otherwise the variables are not available in the pom &ndash;&gt;
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>

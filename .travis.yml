@@ -11,8 +11,10 @@ before_install:
 
 script:
   - mvn clean package -DskipTests=true
+  - mvn cobertura:cobertura
 
 after_success:
+  - bash <(curl -s https://codecov.io/bash)
   - cd ./target
   - git init
   - git config user.name "Starrier"
@@ -20,7 +22,7 @@ after_success:
   - git add iShare.war
   - git commit -m "travis-ci"
   - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
-  - - mvn clean -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID cobertura:cobertura coveralls:report
+  - mvn clean -DTRAVIS_JOB_ID=$TRAVIS_JOB_ID cobertura:cobertura coveralls:report
   - mvn clean test jacoco:report coveralls:report
   - mvn org.eluder.coveralls:coveralls-maven-plugin:report -DrepoToken="${COVERALLS_TOKEN}"
   - mvn sonar:sonar -Dsonar.projectKey=Starrier_iShare  -Dsonar.organization=starrier -Dsonar.host.url=https://sonarcloud.io  -Dsonar.login="${SONAR_TOKEN}"
